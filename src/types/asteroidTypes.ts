@@ -1,7 +1,7 @@
 export interface AsteroidStructure {
   id: string;
   name: string;
-  diameter: string;
+  maxDiameter: number;
   hazardous: boolean;
   speed: string;
 }
