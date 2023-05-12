@@ -15,6 +15,7 @@ declare module "styled-components" {
     fontSizes: {
       smallFontSize: string;
       regularFontSize: string;
+      cardTitleFontSize: string;
       mainHeadingFontSize: string;
     };
 

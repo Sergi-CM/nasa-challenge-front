@@ -15,6 +15,7 @@ const theme: DefaultTheme = {
   fontSizes: {
     smallFontSize: "0.875rem",
     regularFontSize: "1rem",
+    cardTitleFontSize: "1.7rem",
     mainHeadingFontSize: "clamp(40px, 8vw, 60px)",
   },
 
