@@ -1,6 +1,6 @@
 {
-  "short_name": "RockFit",
-  "name": "Your Workouts App",
+  "short_name": "NASA Challenge",
+  "name": "Asteroids information",
   "icons": [],
   "start_url": ".",
   "display": "standalone",
