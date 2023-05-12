@@ -1,7 +1,7 @@
-import Header from "./components/Header/Header";
+import Layout from "./components/Layout/Layout";
 
 const App = (): JSX.Element => {
-  return <Header />;
+  return <Layout />;
 };
 
 export default App;
