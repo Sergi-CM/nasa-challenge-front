@@ -7,6 +7,7 @@ import { RootState, store } from "./store";
 
 import GlobalStyles from "./styles/GlobalStyles";
 import theme from "./styles/theme";
+import { BrowserRouter } from "react-router-dom";
 
 const renderWithProviders = (
   ui: React.ReactElement,
@@ -16,8 +17,10 @@ const renderWithProviders = (
     return (
       <Provider store={store}>
         <ThemeProvider theme={theme}>
-          <GlobalStyles />
-          {children}
+          <BrowserRouter>
+            <GlobalStyles />
+            {children}
+          </BrowserRouter>
         </ThemeProvider>
       </Provider>
     );

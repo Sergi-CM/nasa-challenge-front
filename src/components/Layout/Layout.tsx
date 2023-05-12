@@ -1,4 +1,4 @@
-import { Navigate, Outlet, Route, Routes } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
 
 const Layout = (): JSX.Element => {
@@ -6,9 +6,6 @@ const Layout = (): JSX.Element => {
     <>
       <Header />
       <main>
-        <Routes>
-          <Route path="/" element={<Navigate replace to="/asteroids" />} />
-        </Routes>
         <Outlet />
       </main>
     </>
