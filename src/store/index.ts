@@ -1,7 +1,10 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import { asteroidReducer } from "./features/asteroid/asteroidSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    asteroid: asteroidReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
