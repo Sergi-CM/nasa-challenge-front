@@ -6,13 +6,8 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  #root {
-    display: flex;
-    justify-content: center;
-  }
-
   main {
-    padding-top: 190px;
+    padding-top: 60px;
   }
 
   body {
