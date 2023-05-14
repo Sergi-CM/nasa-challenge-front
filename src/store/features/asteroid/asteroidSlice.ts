@@ -1,16 +1,16 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { AsteroidListStructure } from "../../../types/asteroidTypes";
+import { AppAsteroidListStructure } from "../../../types/asteroidTypes";
 
-const asteroidsInitialState: AsteroidListStructure = [];
+const asteroidsInitialState: AppAsteroidListStructure = [];
 
 export const asteroidSlice = createSlice({
   name: "asteroids",
   initialState: asteroidsInitialState,
   reducers: {
     loadAsteroids: (
-      currentAsteroidsState: AsteroidListStructure,
-      action: PayloadAction<AsteroidListStructure>
-    ): AsteroidListStructure => [...action.payload],
+      currentAsteroidsState: AppAsteroidListStructure,
+      action: PayloadAction<AppAsteroidListStructure>
+    ): AppAsteroidListStructure => [...action.payload],
   },
 });
 
