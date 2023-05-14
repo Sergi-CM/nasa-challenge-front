@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { asteroidReducer } from "./features/asteroid/asteroidSlice";
+import { datesReducer } from "./features/dates/datesSlice";
 
 export const store = configureStore({
   reducer: {
     asteroid: asteroidReducer,
+    dates: datesReducer,
   },
 });
 
