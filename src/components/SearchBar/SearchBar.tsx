@@ -26,7 +26,7 @@ const SearchBar = (): JSX.Element => {
     setRangeOfDays(+event.target.value);
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!initialDate) {
@@ -44,7 +44,7 @@ const SearchBar = (): JSX.Element => {
 
     dispatch(setInitialDateActionCreator(initialDate));
     dispatch(setToDateActionCreator(formattedToDate));
-    getAsteroids();
+    await getAsteroids();
   };
 
   return (
