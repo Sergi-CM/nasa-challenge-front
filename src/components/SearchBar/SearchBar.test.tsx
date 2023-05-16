@@ -14,6 +14,12 @@ jest.mock("../../store/hooks", () => ({
   useAppDispatch: () => mockDispatcher,
 }));
 
+const mockedGetAsteroids = jest.fn();
+
+jest.mock("../../hooks/useApi", () => () => ({
+  getAsteroids: mockedGetAsteroids,
+}));
+
 beforeEach(() => {
   jest.clearAllMocks(); // Reset mocks before each test
 });
@@ -70,6 +76,20 @@ describe("Given a SearchBar component", () => {
       expect(mockDispatcher).toHaveBeenCalledWith(
         setToDateActionCreator(toDate)
       );
+    });
+
+    test("Then it should call the getAsteroids function from the useApi custom hook", async () => {
+      const buttonText = "SEARCH";
+      const initialDate = "2023-05-10";
+
+      renderWithProviders(<SearchBar />);
+      const initialDateInput = screen.getByLabelText("Initial date:");
+      const button = screen.getByRole("button", { name: buttonText });
+
+      await userEvent.type(initialDateInput, initialDate);
+      await userEvent.click(button);
+
+      expect(mockedGetAsteroids).toHaveBeenCalled();
     });
   });
 

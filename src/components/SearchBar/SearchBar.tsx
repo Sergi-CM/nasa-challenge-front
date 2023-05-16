@@ -5,9 +5,11 @@ import {
   setToDateActionCreator,
 } from "../../store/features/dates/datesSlice";
 import SearchBarStyled from "./SearchBarStyled";
+import useApi from "../../hooks/useApi";
 
 const SearchBar = (): JSX.Element => {
   const dispatch = useAppDispatch();
+  const { getAsteroids } = useApi();
 
   const [initialDate, setInitialDate] = useState("");
   const [rangeOfDays, setRangeOfDays] = useState(1);
@@ -24,7 +26,7 @@ const SearchBar = (): JSX.Element => {
     setRangeOfDays(+event.target.value);
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!initialDate) {
@@ -42,6 +44,7 @@ const SearchBar = (): JSX.Element => {
 
     dispatch(setInitialDateActionCreator(initialDate));
     dispatch(setToDateActionCreator(formattedToDate));
+    await getAsteroids();
   };
 
   return (
